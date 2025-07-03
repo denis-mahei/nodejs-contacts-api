@@ -16,3 +16,5 @@ export const initMongoConnection = async () => {
     console.error('Mongo connection error:', error.message);
   }
 };
+
+initMongoConnection();
