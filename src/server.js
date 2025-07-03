@@ -14,6 +14,22 @@ export const setupServer = () => {
     res.status(404).json({ message: 'Not found' });
   });
 
+  exp.get('/contacts', (req, res) => {
+    res.json({
+      status: 200,
+      message: 'Successfully found contacts!',
+      data: [],
+    });
+  });
+
+  exp.get('/contacts/:id', (req, res) => {
+    res.json({
+      status: 200,
+      message: 'Successfully found contacts!',
+      data: [],
+    });
+  });
+
   exp.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
