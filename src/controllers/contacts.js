@@ -1,8 +1,8 @@
-import * as contactsServices from '../services/contacts.js';
+import { getContactsById, getAllContacts } from '../services/contacts.js';
 
-export const getContacts = async (req, res) => {
+export const getContactsController = async (req, res) => {
   try {
-    const contacts = await contactsServices.getAllContacts();
+    const contacts = await getAllContacts();
 
     res.status(200).json({
       status: 200,
@@ -17,10 +17,10 @@ export const getContacts = async (req, res) => {
   }
 };
 
-export const getContact = async (req, res) => {
+export const getContactByIdController = async (req, res) => {
   try {
     const { id } = req.params;
-    const contact = await contactsServices.getContactsById(id);
+    const contact = await getContactsById(id);
 
     if (!contact) {
       return res.status(404).json({
