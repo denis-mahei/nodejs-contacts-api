@@ -4,7 +4,7 @@ import pino from 'pino-http';
 
 import contactsRouter from './routers/contacts.js';
 import { errorHandler } from './middlewares/errorHandler.js';
-import { notFoundHandler } from './middlewares/notFoundHandler.js';
+// import { notFoundHandler } from './middlewares/notFoundHandler.js';
 
 const PORT = process.env.PORT || 3000;
 
