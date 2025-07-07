@@ -3,7 +3,7 @@
 
 .env
 **/test.js
-**/seedContacts.js
+seedContacts.js
 .vscode
 .DS_Store
 .idea
