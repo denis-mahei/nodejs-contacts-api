@@ -13,16 +13,23 @@ export const getAllContacts = async ({
   const skip = (page - 1) * perPage;
 
   const contactsQuery = Contact.find();
-  if ()
-  const contactsCount = await Contact.find()
-    .merge(contactsQuery)
-    .countDocuments();
 
-  const contacts = await contactsQuery
-    .skip(skip)
-    .limit(limit)
-    .sort({ [sortBy]: sortOrder })
-    .exec();
+  if (filter.contactType) {
+    contactsQuery.where('contactType').equals(filter.contactType);
+  }
+
+  if (typeof filter.isFavourite === 'boolean') {
+    contactsQuery.where('isFavourite').equals(filter.isFavourite);
+  }
+
+  const [contactsCount, contacts] = await Promise.all([
+    Contact.find().merge(contactsQuery).countDocuments(),
+    contactsQuery
+      .skip(skip)
+      .limit(limit)
+      .sort({ [sortBy]: sortOrder })
+      .exec(),
+  ]);
 
   const paginationData = calculatePaginationData(contactsCount, perPage, page);
 
