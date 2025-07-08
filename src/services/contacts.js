@@ -4,14 +4,16 @@ import { SORT_ORDER } from '../constants/index.js';
 
 export const getAllContacts = async ({
   page = 1,
-  perPage = 10,
+  perPage = 4,
   sortOrder = SORT_ORDER.ASC,
   sortBy = '_id',
+  filter = {},
 }) => {
   const limit = perPage;
   const skip = (page - 1) * perPage;
 
   const contactsQuery = Contact.find();
+  if ()
   const contactsCount = await Contact.find()
     .merge(contactsQuery)
     .countDocuments();
