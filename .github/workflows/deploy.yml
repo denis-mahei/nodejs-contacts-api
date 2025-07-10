@@ -2,7 +2,7 @@ name: CI + Deploy to Render
 
 on:
   push:
-    branches: [ hw4-validation ]
+    branches: [ hw4-* ]
 
 jobs:
   build_and_deploy:
