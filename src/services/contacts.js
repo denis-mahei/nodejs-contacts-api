@@ -69,6 +69,7 @@ export const updateContact = async (
   const rawResult = await Contact.findOneAndUpdate(
     {
       _id: contactId,
+      userId,
     },
     payload,
     {
