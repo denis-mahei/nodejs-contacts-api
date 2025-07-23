@@ -118,6 +118,7 @@ export const patchContactController = async (req, res, next) => {
       photoUrl = await saveFileToUploadDir(photo);
     }
   }
+  console.log('FILE:', req.file);
 
   const result = await updateContact(
     contactId,
