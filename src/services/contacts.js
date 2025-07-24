@@ -46,10 +46,11 @@ export const getContactsById = (contactId, userId) =>
     userId,
   });
 
-export const createContact = async (payload) => {
-  const contact = await Contact.create(payload);
-  return contact;
-};
+export const createContact = (payload, userId) =>
+  Contact.create({
+    ...payload,
+    userId,
+  });
 
 export const deleteContact = async (contactId, userId) => {
   const contact = await Contact.findOneAndDelete({
