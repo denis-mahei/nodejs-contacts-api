@@ -8,6 +8,7 @@ import { errorHandler } from './middlewares/errorHandler.js';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
 import { getEnvVar } from './utils/getEnvVar.js';
 import { UPLOAD_DIR } from './constants/index.js';
+import { swaggerDocs } from './middlewares/swaggerDocs.js';
 
 const PORT = getEnvVar('PORT', '3000');
 
@@ -35,6 +36,8 @@ export const setupServer = () => {
   exp.use(router);
 
   exp.use('/uploads', express.static(UPLOAD_DIR));
+
+  exp.use('/api-docs', swaggerDocs());
 
   exp.use(notFoundHandler);
 
