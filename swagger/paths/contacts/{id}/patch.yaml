@@ -1,0 +1,36 @@
+tags:
+  - Contacts
+summary: Update contact by ID
+operationId: updateContact
+parameters:
+  - in: path
+    name: id
+    required: true
+    schema:
+      type: string
+    description: Contact ID
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          name:
+            type: string
+          email:
+            type: string
+          phoneNumber:
+            type: string
+          contactType:
+            type: string
+            enum: [ 'work', 'home', 'personal' ]
+responses:
+  '200':
+    description: Contact updated
+  '401':
+    description: Unauthorized
+    $ref: '../../../components/responses/401.yaml'
+  '404':
+    description: Contact not found
+    $ref: '../../../components/responses/404.yaml'

@@ -1,0 +1,9 @@
+tags:
+  - Authorization
+summary: Logout user and clear session cookies
+operationId: logoutUser
+responses:
+  '204':
+    description: Successfully logged out, no content
+  '401':
+    $ref: '../../components/responses/401.yaml'
