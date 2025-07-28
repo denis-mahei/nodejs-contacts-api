@@ -784,7 +784,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
                 "type": "object",
                 "properties": {
@@ -804,6 +804,10 @@
                       "home",
                       "personal"
                     ]
+                  },
+                  "photo": {
+                    "type": "string",
+                    "format": "binary"
                   }
                 }
               }
@@ -845,6 +849,10 @@
         "responses": {
           "204": {
             "description": "Contact deleted successfully"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "$ref": "#/components/responses/401"
           },
           "404": {
             "description": "Contact not found",
@@ -997,11 +1005,6 @@
               "home",
               "personal"
             ]
-          },
-          "parentId": {
-            "description": "Contact's parent id",
-            "type": "string",
-            "example": "65e4decdd286b30065d54af9"
           },
           "photo": {
             "description": "Link to contact's photo",
