@@ -624,8 +624,7 @@
                 "required": [
                   "name",
                   "phoneNumber",
-                  "contactType",
-                  "parentId"
+                  "contactType"
                 ],
                 "properties": {
                   "name": {
@@ -650,11 +649,6 @@
                       "personal"
                     ],
                     "description": "Specifies the type of contact. Can be: 'work' for work-related contacts, 'home' for personal home contacts, or 'personal' for individual personal contacts."
-                  },
-                  "parentId": {
-                    "description": "Contact's parent id",
-                    "type": "string",
-                    "example": "65e4decdd286b30065d54af9"
                   },
                   "photo": {
                     "description": "Contact's photo",
