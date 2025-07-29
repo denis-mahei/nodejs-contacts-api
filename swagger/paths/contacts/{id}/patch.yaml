@@ -25,6 +25,9 @@ requestBody:
           contactType:
             type: string
             enum: [ 'work', 'home', 'personal' ]
+          isFavourite:
+            type: boolean
+            description: Indicates whether the contact is marked as favourite
           photo:
             type: string
             format: binary
