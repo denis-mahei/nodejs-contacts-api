@@ -35,12 +35,12 @@ documentation via **Swagger**.
 ## 🧩 API Endpoints (Examples)
 
 ```
-POST   /api/users/register      → Register a new user
-POST   /api/users/login         → Login user
-GET    /api/contacts            → Get all contacts
-POST   /api/contacts            → Create new contact
-DELETE /api/contacts/:id        → Delete contact
-PATCH  /api/users/avatars       → Upload user avatar
+POST   /auth/register       → Register a new user
+POST   /auth/login          → Login user
+GET    /contacts            → Get all contacts
+POST   /contacts            → Create new contact
+DELETE /contacts/:id        → Delete contact
+PATCH  /api/users/avatars   → Upload user avatar
 ```
 
 ---
@@ -95,7 +95,7 @@ GOOGLE_AUTH_CLIENT_SECRET=your_client_secret
 ### 4️⃣ Start the server:
 
 ```bash
-npm run start
+npm start
 ```
 
 ## 📘 API Documentation
