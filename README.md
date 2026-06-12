@@ -1,4 +1,4 @@
-# 🧠 Node.js Contacts API Project
+# 🧑🏻‍💻Contacts API
 
 ## 📋 Description
 
