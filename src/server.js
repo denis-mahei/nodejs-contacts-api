@@ -15,24 +15,19 @@ const PORT = getEnvVar('PORT', '3000');
 export const setupServer = () => {
   const exp = express();
 
-  exp.use(
-    cors({
-      origin: 'http://localhost:5173',
-      credentials: true,
-    }),
-  );
+  exp.use(cors({
+    origin: process.env.APP_FRONTEND_URL, credentials: true,
+  }));
   exp.use(express.json());
   exp.use(cookieParser());
 
-  exp.use(
-    pino({
-      transport: {
-        target: 'pino-pretty',
-      },
-    }),
-  );
+  exp.use(pino({
+    transport: {
+      target: 'pino-pretty',
+    },
+  }));
 
-  exp.get('/', (req, res) => {
+  exp.get('/', ( req, res ) => {
     res.json({
       message: 'Welcome to contact manager!📲',
     });
